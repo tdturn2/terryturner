@@ -76,14 +76,14 @@ useSeoMeta({
 
       <template #right>
         <UButton
-          to="mailto:hello@terryturner.org"
+          to="mailto:tdturn2@gmail.com"
           icon="i-lucide-mail"
           aria-label="Email"
           color="neutral"
           variant="ghost"
         />
         <UButton
-          to="https://github.com/terryturner"
+          to="https://github.com/tdturn2"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
