@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Inter', 'Public Sans', sans-serif;
+
+  --color-sky-50: #f0f7ff;
+  --color-sky-100: #e0effe;
+  --color-sky-200: #b9dcfd;
+  --color-sky-300: #7cc0fa;
+  --color-sky-400: #3a9ff5;
+  --color-sky-500: #1a84e8;
+  --color-sky-600: #1268c4;
+  --color-sky-700: #1153a0;
+  --color-sky-800: #134785;
+  --color-sky-900: #153c6e;
+  --color-sky-950: #0f2649;
+}
+
+@layer theme {
+  .light,
+  :root {
+    --ui-bg: #f6f8fb;
+    --ui-bg-muted: #eef1f6;
+    --ui-bg-elevated: #e4e9f1;
+    --ui-bg-accented: #d5dce8;
+    --ui-text-highlighted: #0c1424;
+    --ui-text: #334155;
+    --ui-text-toned: #475569;
+    --ui-text-muted: #64748b;
+    --ui-text-dimmed: #94a3b8;
+    --ui-border: #dde3ec;
+    --ui-border-muted: #e6ebf2;
+    --ui-border-accented: #c8d2e0;
+  }
+}
+
+@layer components {
+  .section-default {
+    background-color: var(--ui-bg);
+  }
+
+  .section-muted {
+    background-color: var(--ui-bg-muted);
+    border-block: 1px solid var(--ui-border-muted);
+  }
+
+  .section-accent {
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--ui-color-primary-500) 10%, var(--ui-bg-muted)) 0%,
+      var(--ui-bg) 50%,
+      color-mix(in srgb, var(--ui-color-primary-500) 6%, var(--ui-bg-muted)) 100%
+    );
+    border-block: 1px solid var(--ui-border-muted);
+  }
+
+  .section-cta {
+    background: linear-gradient(
+      180deg,
+      var(--ui-bg-muted) 0%,
+      color-mix(in srgb, var(--ui-color-primary-500) 12%, var(--ui-bg-elevated)) 100%
+    );
+    border-block: 1px solid var(--ui-border-muted);
+  }
+
+  .hero-surface {
+    background:
+      radial-gradient(
+        ellipse 90% 70% at 50% -30%,
+        color-mix(in srgb, var(--ui-color-primary-400) 16%, transparent),
+        transparent 65%
+      ),
+      var(--ui-bg);
+  }
+}
