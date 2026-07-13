@@ -11,7 +11,10 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true },
+    '/terms': { prerender: true },
+    '/privacy': { prerender: true },
+    '/refunds': { prerender: true }
   },
   devServer: {
     port: 3015

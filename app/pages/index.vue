@@ -135,6 +135,11 @@ const stack = [
           description: 'Regular check-ins with working increments — not a big reveal at the end.'
         },
         {
+          icon: 'i-lucide-receipt',
+          title: 'Clear quotes & billing',
+          description: 'Custom project quotes with a deposit to start, then invoices on milestones or delivery. Retainers available for ongoing work.'
+        },
+        {
           icon: 'i-lucide-file-check',
           title: 'Clean handoff',
           description: 'Documented code, deployed infrastructure, and knowledge transfer when we wrap.'
@@ -148,17 +153,22 @@ const stack = [
     >
       <UPageCTA
         title="Have a project in mind?"
-        description="Send a note with a rough idea of what you need — I'll reply within a day or two."
         variant="subtle"
         :links="[
           {
-            label: 'tdturn2@gmail.com',
-            to: 'mailto:tdturn2@gmail.com',
+            label: 'hello@terryturner.org',
+            to: 'mailto:hello@terryturner.org',
             icon: 'i-lucide-mail',
             size: 'lg'
           }
         ]"
-      />
+      >
+        <template #description>
+          <p>
+            Send a note with a rough idea of what you need — I'll reply within a day or two.
+          </p>
+        </template>
+      </UPageCTA>
     </UPageSection>
   </div>
 </template>
