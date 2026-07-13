@@ -44,27 +44,51 @@ const stack = [
 <template>
   <div>
     <UPageHero
-      class="hero-surface"
+      class="hero-video"
       title="Tailored websites and apps for Central Kentucky"
       description="Custom web solutions built around your business — from WordPress sites and PHP backends to modern web apps. Based in Central KY, working with local teams and clients who want something that fits, not a one-size-fits-all template."
+      :ui="{
+        container: 'relative z-10',
+        title: 'text-white',
+        description: 'text-white/85'
+      }"
       :links="[
         {
           label: 'Start a project',
           to: '#contact',
           trailingIcon: 'i-lucide-arrow-right',
-          size: 'xl'
+          size: 'xl',
+          color: 'neutral',
+          class: 'bg-white text-neutral-900 hover:bg-white/90 ring-0'
         },
         {
           label: 'View services',
           to: '#services',
           size: 'xl',
           color: 'neutral',
-          variant: 'subtle'
+          variant: 'outline',
+          class: 'bg-transparent text-white ring-white/50 hover:bg-white/10 hover:ring-white/70'
         }
       ]"
     >
-      <template #headline>
-
+      <template #top>
+        <video
+          class="hero-video__media"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-hidden="true"
+        >
+          <source
+            src="/20220924_152848.mp4"
+            type="video/mp4"
+          >
+        </video>
+        <div
+          class="hero-video__overlay"
+          aria-hidden="true"
+        />
       </template>
     </UPageHero>
 

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const open = ref(false)
+
 const nav = [
   { label: 'Services', to: '#services' },
   { label: 'Stack', to: '#stack' },
@@ -28,37 +30,54 @@ useSeoMeta({
   ogUrl: 'https://terryturner.org',
   twitterCard: 'summary_large_image'
 })
+
+function closeMenu() {
+  open.value = false
+}
 </script>
 
 <template>
   <UApp>
-    <UHeader>
+    <UHeader v-model:open="open">
       <template #left>
         <NuxtLink
           to="/"
           class="font-semibold tracking-tight text-highlighted"
+          @click="closeMenu"
         >
           Terry Turner
         </NuxtLink>
-
-        <nav class="hidden sm:flex items-center gap-1 ms-4">
-          <UButton
-            v-for="item in nav"
-            :key="item.to"
-            :to="item.to"
-            :label="item.label"
-            color="neutral"
-            variant="ghost"
-            size="sm"
-          />
-        </nav>
       </template>
+
+      <UNavigationMenu
+        :items="nav"
+        class="hidden lg:flex"
+      />
 
       <template #right>
         <UButton
           to="#contact"
           label="Get in touch"
           size="sm"
+          class="hidden sm:inline-flex"
+          @click="closeMenu"
+        />
+      </template>
+
+      <template #body>
+        <UNavigationMenu
+          :items="nav"
+          orientation="vertical"
+          class="-mx-2.5"
+          @click="closeMenu"
+        />
+
+        <UButton
+          to="#contact"
+          label="Get in touch"
+          block
+          class="mt-6"
+          @click="closeMenu"
         />
       </template>
     </UHeader>
